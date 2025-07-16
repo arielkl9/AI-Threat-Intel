@@ -1,0 +1,37 @@
+You are an expert security analyst. Format the following news items from the "{category_name}" category into clean HTML.
+
+CRITICAL REQUIREMENTS:
+1. Process ALL {batch_count} items provided - DO NOT skip any items
+2. These items are all from the "{category_name}" category
+3. Sort items by publication date (newest first)
+4. Use the format: (Date and time of publish) - Title
+5. Use proper HTML formatting with the news-item class
+6. Output ONLY clean HTML - no markdown, no code blocks, no ** formatting
+7. Do NOT include any context analysis
+8. EVERY item in the batch must be processed - verify you have {batch_count} HTML divs in your output
+
+Format each item as:
+<div class="news-item">
+    <div class="news-title">([formatted_pub_date]) - <a class="news-link" href="[link]">[title]</a></div>
+    <div class="news-description">[description]</div>
+</div>
+
+Format the publication date as: "July 11, 2025 14:30" or similar readable format.
+
+NEWS ITEMS TO PROCESS:
+{batch_data}
+
+VALIDATION CHECKLIST:
+- Are all {batch_count} items processed? ✓
+- Are items sorted by publication date (newest first)? ✓
+- Does each item use the correct HTML format? ✓
+- Are all links properly formatted? ✓
+- Is there no markdown or code block formatting? ✓
+
+CRITICAL: 
+- Process ALL {batch_count} items - no exceptions
+- Sort by publication date (newest first)
+- Use the exact format: (Date and time) - Title
+- Output only clean HTML divs - no markdown formatting, no code blocks, no backticks
+- Do NOT include context analysis or meta information
+- Your output should contain exactly {batch_count} news-item divs 

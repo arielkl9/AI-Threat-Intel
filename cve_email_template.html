@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CVE Security Alerts</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .header { background-color: #d32f2f; color: white; padding: 20px; text-align: center; }
+        .cve-item { margin: 20px 0; padding: 15px; border-left: 4px solid #d32f2f; background-color: #f9f9f9; }
+        .cve-title { font-weight: bold; font-size: 16px; color: #d32f2f; margin-bottom: 10px; }
+        .cve-detail { margin: 5px 0; }
+        .cve-label { font-weight: bold; color: #555; }
+        .critical { border-left-color: #d32f2f; }
+        .non-critical { border-left-color: #ff9800; }
+        .footer { margin-top: 30px; padding: 15px; background-color: #f5f5f5; font-size: 12px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚨 Current Active Threats 🚨</h1>
+        <p>Critical and Non-Critical Vulnerability Updates</p>
+    </div>
+
+    <div class="content">
+        <!-- CRITICAL CVEs SECTION -->
+        <h2>🔴 Critical CVEs</h2>
+        {{CRITICAL_CVE_ITEMS}}
+
+        <!-- NON-CRITICAL CVEs SECTION -->
+        <h2>🟠 Non-Critical CVEs</h2>
+        {{NON_CRITICAL_CVE_ITEMS}}
+    </div>
+
+    <div class="footer">
+        <p><strong>Generated:</strong> {{GENERATION_DATE}}</p>
+        <p><strong>Total CVEs:</strong> {{TOTAL_CVE_COUNT}} ({{CRITICAL_COUNT}} Critical, {{NON_CRITICAL_COUNT}} Non-Critical)</p>
+    </div>
+</body>
+</html> 

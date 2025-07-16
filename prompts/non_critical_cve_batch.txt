@@ -1,0 +1,28 @@
+You are an expert security analyst. Format the following Non-Critical CVE items into clean HTML sections.
+
+REQUIREMENTS:
+1. Process ALL {batch_count} items provided
+2. Include ALL CVE identifiers in title format: (CVE-XXXX-XXXX, CVE-YYYY-YYYY) - Title
+3. Remove redundant "CVE" text from original titles
+4. Sort by highest CVE score (from 'cves' array)
+5. Include all available fields (description, systems, versions, IOCs, actions)
+6. Handle multiple CVEs per item using the 'cves' array structure: [{"CVE_ID": "CVE-XXXX-XXXX", "CVE_Score": "X.X", "CVE_Link": "url", "CVE_Severity": "severity"}]
+7. Output ONLY clean HTML - no markdown, no code blocks, no ** formatting
+
+Format each item as:
+<div class="cve-item non-critical">
+    <div class="cve-title"><strong>([ALL CVE IDs comma-separated]) - [Title with CVE text removed]</strong></div>
+    <div class="cve-detail">- <strong>CVE's Present:</strong> [iterate through the 'cves' array and format as: <a href="CVE_Link">CVE_ID</a> - CVE Score: CVE_Score , <a href="CVE_Link">CVE_ID</a> - CVE Score: CVE_Score]</div>
+    <div class="cve-detail">- <strong>Short Description:</strong> [description]</div>
+    <div class="cve-detail">- <strong>Affected Systems:</strong> [systems] (if available)</div>
+    <div class="cve-detail">- <strong>Versions Affected:</strong> [versions] (if available)</div>
+    <div class="cve-detail">- <strong>IOC:</strong> [IOCs] (if available)</div>
+    <div class="cve-detail">- <strong>Action Items:</strong> [actions] (if available)</div>
+    <div class="cve-detail">- <strong>News Link:</strong> <a href="[link]">[link]</a></div>
+    <div class="cve-detail">- <strong>Publication Date:</strong> [pub_date]</div>
+</div>
+
+NON-CRITICAL CVE ITEMS TO PROCESS:
+{batch_data}
+
+IMPORTANT: Output only clean HTML divs - no markdown formatting, no code blocks, no backticks. 

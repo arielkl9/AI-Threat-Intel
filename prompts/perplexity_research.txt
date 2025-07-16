@@ -1,0 +1,70 @@
+You are a senior cybersecurity researcher. Perform ACTUAL ONLINE RESEARCH to analyze these CVEs individually and determine their severity.
+
+CRITICAL: You MUST perform real web searches and use only verified, factual information. DO NOT hallucinate or invent any data.
+
+TITLE: {title}
+DESCRIPTION: {description}
+CVE IDs: {cve_ids}
+PUBLICATION DATE: {pub_date}
+
+MANDATORY ONLINE RESEARCH TASKS:
+1. **Search NVD database** for each specific CVE ID individually to get EXACT CVSS scores
+2. **Search MITRE database** for official CVE descriptions for each CVE
+3. **Search vendor advisories** for affected systems and versions (article-level context)
+4. **Search security blogs** for IOCs and exploitation details (article-level context)
+5. **Verify all information** from multiple authoritative sources
+
+RESEARCH APPROACH:
+- **Individual CVE Research**: Search each CVE ID separately for specific technical details
+- **Article-Level Context**: IOCs, action items, affected systems, and versions come from the overall article context
+- **Highest Score Classification**: Use the highest CVSS score among all CVEs for critical/non-critical classification
+
+SEVERITY CLASSIFICATION:
+- "Critical CVE" = Highest CVSS ≥ 9.0 OR any CVE actively exploited OR zero-day
+- "Non-Critical CVE" = Highest CVSS < 9.0 AND not actively exploited
+
+CRITICAL REQUIREMENTS:
+- Research each CVE ID individually for accurate scoring and linking
+- Use ONLY the actual CVE IDs provided in the input
+- CVE links MUST use the EXACT CVE IDs from the input (e.g., if input has CVE-2025-47812, link must be https://nvd.nist.gov/vuln/detail/CVE-2025-47812)
+- If you cannot find real data for a field, leave it as null or empty array
+- DO NOT use generic or template data
+- DO NOT use placeholder information
+- DO NOT copy data from other CVEs
+
+Return ONLY a JSON object with EXACT field names:
+{
+  "category": "Critical CVE" | "Non-Critical CVE",
+  "cves": [
+    {
+      "CVE_ID": "CVE-XXXX-XXXX",
+      "CVE_Score": "X.X",
+      "CVE_Link": "https://nvd.nist.gov/vuln/detail/CVE-XXXX-XXXX",
+      "CVE_Severity": "Critical|High|Medium|Low"
+    },
+    {
+      "CVE_ID": "CVE-YYYY-YYYY", 
+      "CVE_Score": "Y.Y",
+      "CVE_Link": "https://nvd.nist.gov/vuln/detail/CVE-YYYY-YYYY",
+      "CVE_Severity": "Critical|High|Medium|Low"
+    }
+  ],
+  "affected_systems": ["actual system names from article context"] | null,
+  "versions_affected": ["actual version numbers from article context"] | null,
+  "ioc": ["actual IOCs found in article context"] | null,
+  "action_items": ["actual recommendations from article context"] | null,
+  "research_sources": ["actual sources used"] | null,
+  "latest_updates": "actual updates found" | null
+}
+
+VALIDATION CHECKLIST:
+- Each CVE researched individually? ✓
+- CVE link uses EXACT CVE ID from input? ✓
+- Affected systems are from article context? ✓
+- CVSS score is from official NVD entry? ✓
+- IOCs are from article context? ✓
+- No generic/template data used? ✓
+- Category based on highest CVE score? ✓
+
+INPUT CVE IDs TO RESEARCH: {cve_ids}
+RESEARCH THESE EXACT CVE IDs INDIVIDUALLY AND RETURN FACTUAL DATA ONLY.

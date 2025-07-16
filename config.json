@@ -1,0 +1,20 @@
+{
+  "openai_model": "gpt-4o-mini",
+  "openai_temperature": 0.1,
+  
+  "perplexity_model": "sonar-pro",
+  
+  "credentials_file": "credentials.json",
+  "email_subject": "🚨 Threat Intelligence Weekly Report",
+  
+  "feed_urls": [
+    "https://feeds.feedburner.com/TheHackersNews",
+    "https://www.bleepingcomputer.com/feed/"
+  ],
+  
+  "news_days_filter": 7,
+  
+  "web_timeout": 30,
+  "web_connect_timeout": 10,
+  "max_retries": 3
+} 

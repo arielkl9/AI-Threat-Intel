@@ -1,0 +1,31 @@
+You are an expert security analyst. Analyze the following news items and categorize them into meaningful sub-categories.
+
+CRITICAL REQUIREMENTS:
+1. Group similar items together based on content, not just keywords
+2. Create descriptive category names (e.g., "Data Breaches & Incidents", "Malware & Threats", "Vulnerabilities & Patches")
+3. Each item MUST be assigned to exactly one category
+4. Aim for 3-6 categories maximum
+5. Categories should be relevant to security teams
+6. EVERY item must be categorized - no item should be left out
+7. Use ALL indices from 0 to {item_count} - 1
+
+NEWS ITEMS TO CATEGORIZE:
+{news_items}
+
+VALIDATION CHECKLIST:
+- Are all items (indices 0 to {item_count} - 1) assigned to categories? ✓
+- Does each item appear in exactly one category? ✓
+- Are category names descriptive and security-relevant? ✓
+- Are there 3-6 categories maximum? ✓
+
+OUTPUT FORMAT:
+Return a JSON object where keys are category names and values are arrays of item indices (0-based):
+{{
+  "Data Breaches & Incidents": [0, 5, 12],
+  "Malware & Threats": [1, 3, 8],
+  "Vulnerabilities & Patches": [2, 4, 6],
+  "Security Tools & Research": [7, 9, 10],
+  "Regulatory & Compliance": [11, 13, 14]
+}}
+
+CRITICAL: Use the exact indices from the items array (0-based indexing). ALL items must be categorized - verify that indices 0 through {item_count} - 1 are all assigned to categories. Each item should appear in exactly one category.
