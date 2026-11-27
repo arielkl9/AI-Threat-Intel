@@ -181,5 +181,3 @@ cython_debug/
 .cursorindexingignore
 credentials.json
 token.json
-.gitattributes
-.gitattributes
