@@ -1,0 +1,6 @@
+# Normalise line endings: author in LF, check out native on Windows.
+* text=auto eol=lf
+*.txt text eol=lf
+*.py text eol=lf
+*.html text eol=lf
+*.json text eol=lf
